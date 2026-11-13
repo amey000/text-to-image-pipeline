@@ -15,7 +15,8 @@ Everything runs in **Google Colab** with a GPU, using Google Drive for storage. 
 | `Text_to_Image_pipeline.ipynb` | Main Colab notebook: data prep → training → dashboard. |
 | `Text_to_Image_Pipeline.py` | Colab export of the notebook (contains `!` shell magics, so run it in Colab, not plain Python). |
 | `train_text_to_image_lora.py` | Hugging Face Diffusers LoRA training script (Apache 2.0), launched by the pipeline. |
-| `requirements.txt` | Extended setup notes and troubleshooting. |
+| `requirements.txt` | Python dependencies (`pip install -r requirements.txt`). |
+| `SETUP_NOTES.md` | Extended setup notes and troubleshooting. |
 
 ## Prerequisites
 
@@ -44,7 +45,7 @@ Open `Text_to_Image_pipeline.ipynb` in Colab, set **Runtime → Change runtime t
 Mounts Drive, copies a 5,000-image subset to Colab's local disk for speed, and writes the `metadata.jsonl` (file name + caption) that the trainer expects.
 
 **Stage 2: LoRA training** (`launch_lora_training`)
-Installs `diffusers`, `transformers`, `accelerate`, `peft` and `bitsandbytes`, then runs:
+Installs `diffusers`, `transformers`, `accelerate`, `peft` and `bitsandbytes`, then runs the training below. Outside Colab, install everything up front with `pip install -r requirements.txt`.
 
 | Setting | Value |
 | --- | --- |
