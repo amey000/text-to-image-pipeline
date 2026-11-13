@@ -1,0 +1,19 @@
+# Dataset (download separately: https://cocodataset.org)
+coco2017/
+
+# macOS / Office
+.DS_Store
+~$*
+
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+
+# Model weights / outputs
+*.safetensors
+*.ckpt
+*.bin
