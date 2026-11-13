@@ -101,7 +101,7 @@ def launch_lora_training(data_dir="/content/lisa_training_data"):
 
     # This command triggers the actual heavy lifting
     !accelerate launch --mixed_precision="fp16" train_text_to_image_lora.py \
-      --pretrained_model_name_or_path="runwayml/stable-diffusion-v1-5" \
+      --pretrained_model_name_or_path="stable-diffusion-v1-5/stable-diffusion-v1-5" \
       --train_data_dir="{data_dir}" \
       --caption_column="text" \
       --resolution=512 \
@@ -184,7 +184,7 @@ class LISAProjectOpenAI:
         # Load Base Model on T4 GPU
         print("Loading Stable Diffusion Base Model...")
         self.pipe = StableDiffusionPipeline.from_pretrained(
-            "runwayml/stable-diffusion-v1-5",
+            "stable-diffusion-v1-5/stable-diffusion-v1-5",
             torch_dtype=torch.float16,
             use_auth_token=hf_token
         ).to("cuda")

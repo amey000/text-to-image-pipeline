@@ -49,7 +49,7 @@ Installs `diffusers`, `transformers`, `accelerate`, `peft` and `bitsandbytes`, t
 
 | Setting | Value |
 | --- | --- |
-| Base model | `runwayml/stable-diffusion-v1-5` |
+| Base model | `stable-diffusion-v1-5/stable-diffusion-v1-5` |
 | Resolution | 512 |
 | Batch size / grad. accumulation | 1 / 4 |
 | Steps | 500 (checkpoint every 250) |
@@ -72,7 +72,7 @@ Values typed into notebook widgets are **saved inside the `.ipynb` file**. Befor
 
 - **"Training data not found"**: Stage 1 hasn't been run, or the COCO files aren't at the configured Drive paths.
 - **"T4 GPU not detected" / CUDA errors**: the Colab runtime isn't set to GPU.
-- **Model download fails for `runwayml/stable-diffusion-v1-5`**: that repo has been taken down on Hugging Face. Point `--pretrained_model_name_or_path` and the inference pipeline at the community mirror `stable-diffusion-v1-5/stable-diffusion-v1-5` instead.
+- **Why not `runwayml/stable-diffusion-v1-5`?** That repo has been taken down from Hugging Face. This project uses the mirror `stable-diffusion-v1-5/stable-diffusion-v1-5`, which has the same weights. LoRAs trained on either one are interchangeable.
 - **OpenAI errors**: check your API key and credit balance.
 
 ## Credits
